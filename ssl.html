@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="tr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>SSL - MineHostAQ</title>
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script>
+		tailwind.config = {
+			theme: {
+				extend: {
+					fontFamily: { sans: ["Inter", "ui-sans-serif", "system-ui"] },
+				}
+			}
+		}
+	</script>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-br from-gray-50 via-white to-purple-50/30 text-slate-800 font-sans">
+	<script>
+		// Site koruma - F12, sağ tık ve kaynak görüntülemeyi engelle
+		document.addEventListener('keydown', function(e) {
+			if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I') || (e.ctrlKey && e.shiftKey && e.key === 'J') || (e.ctrlKey && e.key === 'U')) {
+				e.preventDefault();
+				return false;
+			}
+		});
+
+		document.addEventListener('contextmenu', function(e) {
+			e.preventDefault();
+			return false;
+		});
+
+		document.addEventListener('selectstart', function(e) {
+			e.preventDefault();
+			return false;
+		});
+
+		// Kayıt kontrolü - kayıt olmadan blog sayfasına erişimi engelle
+		const REGISTERED_KEY = 'mh_is_registered';
+		if (localStorage.getItem(REGISTERED_KEY) !== '1') {
+			// Kayıt olmamış kullanıcıları ana sayfaya yönlendir
+			window.location.href = 'index.html';
+		}
+	</script>
+	<header class="sticky top-0 z-30 bg-purple-950/70 backdrop-blur border-b border-purple-900 shadow-lg">
+		<div class="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between">
+			<a href="index.html" class="flex items-center gap-2 text-white hover:scale-105 transition-transform">
+				<div class="w-7 h-7 rounded-md bg-gradient-to-br from-fuchsia-500 to-purple-500 grid place-items-center font-bold shadow-lg">M</div>
+				<span class="font-semibold">MineHostAQ</span>
+			</a>
+			<nav class="hidden sm:flex items-center gap-6 text-sm text-gray-200">
+				<a href="index.html#hizmetler" class="hover:text-white transition-colors">Hizmetler</a>
+				<a href="index.html#fiyat" class="hover:text-white transition-colors">Fiyatlandırma</a>
+			</nav>
+		</div>
+	</header>
+
+	<main class="max-w-4xl mx-auto px-4 py-12">
+		<div class="text-center mb-12">
+			<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-100 text-purple-700 text-sm font-medium mb-4">
+				<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M12 11c1.657 0 3-1.343 3-3V6a3 3 0 10-6 0v2c0 1.657 1.343 3 3 3z"/><path d="M5 11h14v7a2 2 0 01-2 2H7a2 2 0 01-2-2v-7z"/></svg>
+				SSL Rehberi
+			</div>
+			<h1 class="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-purple-600 to-fuchsia-600 bg-clip-text text-transparent">SSL Sertifikaları</h1>
+			<p class="mt-4 text-xl text-gray-600 max-w-2xl mx-auto">Web güvenliği için SSL neden önemlidir? Detaylı rehberimizi inceleyin.</p>
+		</div>
+
+		<article class="prose prose-slate max-w-none">
+			<div class="bg-white rounded-2xl shadow-xl border border-gray-100 p-8 mb-8">
+				<h2 class="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-3">
+					<div class="w-8 h-8 rounded-lg bg-blue-100 text-blue-600 grid place-items-center">
+						<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M12 11c1.657 0 3-1.343 3-3V6a3 3 0 10-6 0v2c0 1.657 1.343 3 3 3z"/><path d="M5 11h14v7a2 2 0 01-2 2H7a2 2 0 01-2-2v-7z"/></svg>
+					</div>
+					SSL Nedir?
+				</h2>
+				<p class="text-lg text-gray-700 leading-relaxed">SSL (Secure Sockets Layer), kullanıcı ile sunucu arasındaki trafiği şifreleyerek verilerin üçüncü taraflarca okunmasını engeller. Modern web'de HTTPS protokolünün temelidir.</p>
+			</div>
+
+			<div class="grid md:grid-cols-2 gap-6 mb-8">
+				<div class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl border border-green-200 p-6">
+					<h3 class="text-xl font-bold text-green-800 mb-4 flex items-center gap-2">
+						<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+						SSL Avantajları
+					</h3>
+					<ul class="space-y-3 text-green-700">
+						<li class="flex items-center gap-2"><span class="w-2 h-2 bg-green-500 rounded-full"></span>Veri şifreleme</li>
+						<li class="flex items-center gap-2"><span class="w-2 h-2 bg-green-500 rounded-full"></span>Güvenlik artışı</li>
+						<li class="flex items-center gap-2"><span class="w-2 h-2 bg-green-500 rounded-full"></span>SEO avantajı</li>
+						<li class="flex items-center gap-2"><span class="w-2 h-2 bg-green-500 rounded-full"></span>Kullanıcı güveni</li>
+					</ul>
+				</div>
+
+				<div class="bg-gradient-to-br from-orange-50 to-red-50 rounded-2xl border border-orange-200 p-6">
+					<h3 class="text-xl font-bold text-orange-800 mb-4 flex items-center gap-2">
+						<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg>
+						SSL Olmadan
+					</h3>
+					<ul class="space-y-3 text-orange-700">
+						<li class="flex items-center gap-2"><span class="w-2 h-2 bg-orange-500 rounded-full"></span>Veri güvensizliği</li>
+						<li class="flex items-center gap-2"><span class="w-2 h-2 bg-orange-500 rounded-full"></span>SEO dezavantajı</li>
+						<li class="flex items-center gap-2"><span class="w-2 h-2 bg-orange-500 rounded-full"></span>Tarayıcı uyarıları</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="bg-gradient-to-r from-purple-50 to-blue-50 rounded-2xl border border-purple-200 p-6 mb-8">
+				<h3 class="text-xl font-bold text-purple-800 mb-4">SSL Türleri</h3>
+				<p class="text-gray-700 mb-4">Farklı SSL sertifika türleri ve özellikleri:</p>
+				<div class="grid sm:grid-cols-3 gap-4">
+					<div class="flex items-start gap-3">
+						<div class="w-6 h-6 rounded-full bg-purple-100 text-purple-600 grid place-items-center text-sm font-bold mt-0.5">1</div>
+						<div>
+							<h4 class="font-semibold text-purple-800">DV</h4>
+							<p class="text-sm text-gray-600">Domain Validation</p>
+						</div>
+					</div>
+					<div class="flex items-start gap-3">
+						<div class="w-6 h-6 rounded-full bg-purple-100 text-purple-600 grid place-items-center text-sm font-bold mt-0.5">2</div>
+						<div>
+							<h4 class="font-semibold text-purple-800">OV</h4>
+							<p class="text-sm text-gray-600">Organization Validation</p>
+						</div>
+					</div>
+					<div class="flex items-start gap-3">
+						<div class="w-6 h-6 rounded-full bg-purple-100 text-purple-600 grid place-items-center text-sm font-bold mt-0.5">3</div>
+						<div>
+							<h4 class="font-semibold text-purple-800">EV</h4>
+							<p class="text-sm text-gray-600">Extended Validation</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</article>
+
+		<div class="text-center">
+			<a href="index.html#hizmetler" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-fuchsia-600 text-white font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all">
+				<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd"/></svg>
+				Hizmetlere Geri Dön
+			</a>
+		</div>
+	</main>
+</body>
+</html>

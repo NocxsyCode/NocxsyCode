@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="tr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Fiyatlandırma - MineHostAQ</title>
+	<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50">
+	<script>
+		const REGISTERED_KEY = 'mh_is_registered';
+		if (localStorage.getItem(REGISTERED_KEY) !== '1') {
+			// Not registered: go back to index and show error banner
+			location.href = 'index.html#fiyat';
+		}
+	</script>
+	<div class="min-h-screen grid place-items-center">
+		<div class="text-center">
+			<h1 class="text-3xl font-bold">Fiyatlandırma</h1>
+			<p class="mt-3 text-gray-600">Bu sayfa yalnızca kayıtlı kullanıcılar içindir.</p>
+			<a href="index.html" class="mt-6 inline-flex items-center px-5 py-2 rounded-lg bg-indigo-600 text-white">Ana sayfaya dön</a>
+		</div>
+	</div>
+</body>
+</html>
